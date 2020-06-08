@@ -19,11 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Graphics\Window.cpp" />
     <ClCompile Include="Input\InputManager.cpp" />
     <ClCompile Include="Main\main.cpp" />
+    <ClCompile Include="Structs\Float2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Graphics\GraphicIncludes.h" />
+    <ClInclude Include="Graphics\Window.h" />
     <ClInclude Include="Input\InputManager.h" />
+    <ClInclude Include="Structs\Float2.h" />
+    <ClInclude Include="Structs\Structs.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

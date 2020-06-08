@@ -1,20 +1,12 @@
-#pragma comment(lib, "SDL2.lib")
-#pragma comment(lib, "SDL2main.lib")
-#pragma comment (lib,"opengl32.lib")
-#pragma comment (lib,"Glu32.lib")
-#pragma comment(lib, "SDL2_image.lib")  
-
 #define SDL_MAIN_HANDLED
-#include <windows.h>
 
-#include <SDL.h>
-#include <gl/GL.h>
 #include <ctime>
 #include <vld.h>
 
 #include <iostream>
 #include <string>
 
+#include "../Graphics/Window.h"
 #include "../Input/InputManager.h"
 
 using namespace std;
@@ -50,8 +42,9 @@ int main()
 
 	SDL_Event event;
 	bool isRunning = true;
+	Window window{};
 
-	SDL_Window* window = SDL_CreateWindow("Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
+	window.Create("Progression Game", Float2(1080, 720));
 
 	while (isRunning)
 	{
@@ -79,7 +72,9 @@ int main()
 			} break;
 			}
 		}
+
+		window.ClearBackground();
 	}
 
-	SDL_DestroyWindow(window);
+	window.Destroy();
 }
